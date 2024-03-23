@@ -1,0 +1,52 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<style>
+            nav {
+            background-color: #333;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: #333;
+        }
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Chatbot</title>
+</head>
+<body>
+    <nav>
+        <a href="/chatbot" >Chatbot</a>
+        <a href="/register">Register</a>
+        <a href="/">Home</a>
+    </nav>
+    <h1>Medicine Chatbot</h1>
+    <form action="/chat" method="POST">
+        <label for="query">Enter your query:</label><br>
+        <textarea id="query" name="query" rows="4" cols="50"></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+    {% if query %}
+    <h2>Your Query:</h2>
+    <p>{{ query }}</p>
+    {% endif %}
+    {% if response %}
+    <h2>Response:</h2>
+    <p>{{ response }}</p>
+    {% endif %}
+</body>
+</html>
